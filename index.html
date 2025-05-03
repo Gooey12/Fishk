@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<link rel="stylesheet" href="bootstrap.min.css">
+<link rel="stylesheet" href="style.css">
+<link rel="shortcut icon" href="assets/favicon.png" type="image/x-icon">
+
+<title>Fishk</title>
+
+</head>
+<body data-bs-theme="light" style="background-color: #1383BB !important;">
+<center>
+
+<br><br><br><br>
+
+<div class="border border-2 rounded header-width p-1 px-3 pt-2 bg-info">
+    <h1>🎣 Fishk 💵</h1>
+</div>
+
+<br><br><br><br><br><br><br>
+
+<div class="border border-2 rounded w-25 p-2 bg-info">
+    <div class="row align-items-start pt-3">
+        <div class="col">
+            <p id="moneyDisplay">Money: $0 💵</p>
+        </div>
+        <div class="col">
+            <p id="fishDisplay">Inventory: 0 🐟</p>
+        </div>
+    </div>
+    <div class="py-1 pt-3 pb-3">
+        <button id="fishBTN" onclick="fish()" class="btn btn-success">Fish 🎣</button>
+        <button onclick="sellFish()" class="btn btn-primary">Sell 💵</button>
+    </div>
+    <div class="pt-3">
+        <p id="fishedDisplay">You haven't fished anything</p>
+        <p id="soldDisplay">You haven't sold anything</p>
+    </div>
+</div>
+
+</center>
+<script src="app.js"></script>
+</body>
+</html>
