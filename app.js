@@ -1,4 +1,7 @@
 let Money = 0
+let Level = 0
+let XP = 0
+
 let FishInInventory = 0
 let FishPrice = 7
 
@@ -16,7 +19,7 @@ function fish() {
     canFish = false;
     setTimeout(() => {
         canFish = true;
-        document.getElementById("fishBTN").innerText = "Fish";
+        document.getElementById("fishBTN").innerText = "Fish 🎣";
     }, 1250);
 
     document.getElementById("fishBTN").innerHTML = "Reeling..."
@@ -24,7 +27,7 @@ function fish() {
 
 
 
-    const fishedText = document.getElementById("fishedDisplay");
+    const fishedDisplay = document.getElementById("fishedDisplay");
 
     const min = 0
     const max = 3
@@ -32,34 +35,57 @@ function fish() {
     FishInInventory = FishInInventory + fished
 
     if (fished > 0) {
-        fishedText.innerHTML = `You fished ${fished} fishes! 🐟`
+        fishedDisplay.innerHTML = `You fished ${fished} fishes! 🐟`
     } else if (fished == 0) {
-        fishedText.innerHTML = "You didn't got any fish :("
+        fishedDisplay.innerHTML = "You didn't got any fish :("
     }
 
     clearTimeout(fishResetTimeout);
     fishResetTimeout = setTimeout(() => {
-        fishedText.innerHTML = "You haven't fished anything";
+        fishedDisplay.innerHTML = "You haven't fished anything";
     }, 2200);
 }
 
+
+
 // Sell some fish
 function sellFish() {
-    const soldView = document.getElementById("soldDisplay");
+    const soldDisplay = document.getElementById("soldDisplay");
 
     if (FishInInventory > 0) {
         let Earned = FishInInventory * FishPrice
         Money += Earned
-        soldView.innerHTML = `You got $${Earned} from selling ${FishInInventory} fishes`
+
+        XP += FishInInventory / Math.round(Math.random() * (3 - 2) + 2);
+        console.log(`XP: ${XP}`);
+
+        soldDisplay.innerHTML = `You got $${Earned} from selling ${FishInInventory} fishes`
+
         FishInInventory = 0
         Earned = 0
 
+        if (XP >= 10) {
+            Level += 1
+            XP = 0
+        
+            console.log(`Level: ${Level}`);
+            console.log(`XP: ${XP}`);
+        }
+
         clearTimeout(sellResetTimeout);
         sellResetTimeout = setTimeout(() => {
-            soldView.innerHTML = "You haven't sold anything";
+            soldDisplay.innerHTML = "You haven't sold anything";
         }, 1500);
-    } 
+    } else {
+        soldDisplay.innerHTML = "You don't have anything to sell"
+
+        clearTimeout(sellResetTimeout);
+        sellResetTimeout = setTimeout(() => {
+            soldDisplay.innerHTML = "You haven't sold anything";
+        }, 1500);
+    }
 }
+
 
 
 // Update display text
@@ -69,4 +95,8 @@ setInterval(function() {
 
 setInterval(function() {
     document.getElementById("fishDisplay").innerHTML = `Inventory: ${FishInInventory} 🐟`
+}, 1);
+
+setInterval(function() {
+    document.getElementById("levelDisplay").innerHTML = `Level: ${Level}`
 }, 1);
