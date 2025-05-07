@@ -20,9 +20,10 @@
     <h1>🎣 Fishk 💵</h1>
 </div>
 
-<br><br><br><br><br><br><br>
+<br><br><br><br><br><br>
 
-<div class="border border-2 rounded p-2 bg-info px-4 col-lg-4 col-10">
+<div>
+<div id="Main-Card" class="border border-2 rounded bg-info p-4 col-lg-4 col-10">
     <div class="row align-items-start pt-3">
         <div class="col">
             <p id="moneyDisplay">Money: $0 💵</p>
@@ -46,9 +47,20 @@
         <p id="fishedDisplay">You haven't fished anything</p>
         <p id="soldDisplay">You haven't sold anything</p>
     </div>
+    <a class="btn btn-warning" data-bs-toggle="offcanvas" href="#offcanvasExample" role="button" aria-controls="offcanvasExample">Upgrades ⏫</a>
+    <div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvasExample" aria-labelledby="offcanvasExampleLabel">
+        <div class="offcanvas-header border border-2" style="background-color: #22D2ED;">
+            <h5 class="offcanvas-title" id="offcanvasExampleLabel">Upgrade</h5>
+            <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+        </div>
+        <div class="offcanvas-body border border-2" style="background-color: #1383BB;">
+        </div>
+    </div>
+</div>
 </div>
 
 </center>
 <script src="app.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/js/bootstrap.bundle.min.js" integrity="sha384-k6d4wzSIapyDyv1kpU366/PK5hCdSbCRGRCMv+eplOQJWyd1fbcAu9OCUj5zNLiq" crossorigin="anonymous"></script>
 </body>
 </html>
