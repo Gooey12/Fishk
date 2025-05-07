@@ -37,7 +37,7 @@ function fish() {
     if (fished > 0) {
         fishedDisplay.innerHTML = `You fished ${fished} fishes! 🐟`
     } else if (fished == 0) {
-        fishedDisplay.innerHTML = "You didn't got any fish :("
+        fishedDisplay.innerHTML = "You didn't get any fish :("
     }
 
     clearTimeout(fishResetTimeout);
