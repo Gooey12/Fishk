@@ -1,4 +1,4 @@
-import variables from '../variables.js';
+import variables from '../vars.js';
 
 function catchFish() {
     if (!variables.canFish) return;

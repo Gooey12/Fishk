@@ -1,4 +1,4 @@
-import variables from './variables.js';
+import variables from './vars.js';
 
 import catchFish from './actions/catchFish.js'
 import sellFish from './actions/sellFish.js';

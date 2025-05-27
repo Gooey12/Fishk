@@ -1,4 +1,4 @@
-import variables from '../variables.js';
+import variables from '../vars.js';
 
 function sellFish() {
     const soldDisplay = document.getElementById("soldDisplay");
