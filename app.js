@@ -14,7 +14,7 @@ document.getElementById("sellBTN").addEventListener('click', sellFish);
 
 
 
-// Display texts
+// Update display texts
 setInterval(() => {
     document.getElementById("moneyDisplay").innerHTML = `Money: $${variables.Money} 💵`;
 }, 100);
