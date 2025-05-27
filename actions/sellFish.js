@@ -1,37 +1,37 @@
-import variables from '../vars.js';
+import variable from '../vars.js';
 
 function sellFish() {
     const soldDisplay = document.getElementById("soldDisplay");
 
-    if (variables.FishInInventory > 0) {
-        let earned = variables.FishInInventory * variables.FishPrice;
-        variables.Money += earned;
+    if (variable.FishInInventory > 0) {
+        let earned = variable.FishInInventory * variable.FishPrice;
+        variable.Money += earned;
 
-        variables.XP += variables.FishInInventory / Math.round(Math.random() * (3 - 2) + 2);
-        console.log(`XP: ${variables.XP}`);
+        variable.XP += variable.FishInInventory / Math.round(Math.random() * (3 - 2) + 2);
+        console.log(`XP: ${variable.XP}`);
 
-        soldDisplay.innerHTML = `You got $${earned} from selling ${variables.FishInInventory} fishes`;
+        soldDisplay.innerHTML = `You got $${earned} from selling ${variable.FishInInventory} fishes`;
 
-        variables.FishInInventory = 0;
+        variable.FishInInventory = 0;
         earned = 0;
 
-        if (variables.XP >= 10) {
-            variables.Level += 1;
-            variables.XP = 0;
+        if (variable.XP >= 10) {
+            variable.Level += 1;
+            variable.XP = 0;
 
-            console.log(`Level: ${variables.Level}`);
-            console.log(`XP: ${variables.XP}`);
+            console.log(`Level: ${variable.Level}`);
+            console.log(`XP: ${variable.XP}`);
         }
 
-        clearTimeout(variables.sellResetTimeout);
-        variables.sellResetTimeout = setTimeout(() => {
+        clearTimeout(variable.sellResetTimeout);
+        variable.sellResetTimeout = setTimeout(() => {
             soldDisplay.innerHTML = "You haven't sold anything";
         }, 1500);
     } else {
         soldDisplay.innerHTML = "You don't have anything to sell";
 
-        clearTimeout(variables.sellResetTimeout);
-        variables.sellResetTimeout = setTimeout(() => {
+        clearTimeout(variable.sellResetTimeout);
+        variable.sellResetTimeout = setTimeout(() => {
             soldDisplay.innerHTML = "You haven't sold anything";
         }, 1500);
     }

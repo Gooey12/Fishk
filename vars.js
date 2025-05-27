@@ -1,4 +1,4 @@
-const variables = {
+const variable = {
     Money: 0,
     Level: 0,
     XP: 0,
@@ -9,4 +9,4 @@ const variables = {
     canFish: true
 };
 
-export default variables;
+export default variable;

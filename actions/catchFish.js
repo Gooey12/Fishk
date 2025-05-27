@@ -1,11 +1,11 @@
-import variables from '../vars.js';
+import variable from '../vars.js';
 
 function catchFish() {
-    if (!variables.canFish) return;
+    if (!variable.canFish) return;
 
-    variables.canFish = false;
+    variable.canFish = false;
     setTimeout(() => {
-        variables.canFish = true;
+        variable.canFish = true;
         document.getElementById("fishBTN").innerText = "Fish 🎣";
     }, 1250);
 
@@ -16,7 +16,7 @@ function catchFish() {
     const min = 0;
     const max = 3;
     const fished = Math.round(Math.random() * (max - min) + min);
-    variables.FishInInventory += fished;
+    variable.FishInInventory += fished;
 
     if (fished > 0) {
         fishedDisplay.innerHTML = `You fished ${fished} fishes! 🐟`;
@@ -24,8 +24,8 @@ function catchFish() {
         fishedDisplay.innerHTML = "You didn't get any fish :(";
     }
 
-    clearTimeout(variables.fishResetTimeout);
-    variables.fishResetTimeout = setTimeout(() => {
+    clearTimeout(variable.fishResetTimeout);
+    variable.fishResetTimeout = setTimeout(() => {
         fishedDisplay.innerHTML = "You haven't fished anything";
     }, 2200);
 }
