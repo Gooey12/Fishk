@@ -19,9 +19,13 @@ function catchFish() {
     variable.FishInInventory += fished;
 
     if (fished > 0) {
-        fishedDisplay.innerHTML = `You fished ${fished} fishes! 🐟`;
+        if (fished < 2) {
+            fishedDisplay.innerHTML = `You caught ${fished} fish! 🐟`;
+        } else {
+            fishedDisplay.innerHTML = `You caught ${fished} fishes! 🐟`;
+        }
     } else {
-        fishedDisplay.innerHTML = "You didn't get any fish :(";
+        fishedDisplay.innerHTML = "You didn't catch any fish :(";
     }
 
     clearTimeout(variable.fishResetTimeout);
