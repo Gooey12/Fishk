@@ -1,3 +1,15 @@
+@font-face {
+  font-family: "Patrick Hand";
+  src: url('./assets/font.ttf') format('truetype');
+}
+
+* {
+    font-family: "Patrick Hand", cursive;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 102%;
+}
+
 .header-width {
     width: fit-content;
 }
