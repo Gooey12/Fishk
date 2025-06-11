@@ -1,4 +1,5 @@
-import variable from './vars.js';
+import variable from './vars.js'
+import stats from './stats.js'
 
 import catchFish from './actions/catchFish.js'
 import sellFish from './actions/sellFish.js';
@@ -25,4 +26,17 @@ setInterval(() => {
 
 setInterval(() => {
     document.getElementById("levelDisplay").innerHTML = `Level: ${variable.Level}`;
+}, 100);
+
+
+
+// Display Stats
+const totalFishedDisplay = document.getElementById("totalFished-Display");
+setInterval(() => {
+    totalFishedDisplay.innerHTML = `Total Fished: ${stats.totalFished}`;
+}, 100);
+
+const totalSoldDisplay = document.getElementById("totalSold-Display");
+setInterval(() => {
+    totalSoldDisplay.innerHTML = `Total Sold: ${stats.totalSold}`;
 }, 100);

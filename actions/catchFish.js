@@ -1,4 +1,5 @@
 import variable from '../vars.js';
+import stats from '../stats.js';
 
 function catchFish() {
     if (!variable.canFish) return;
@@ -17,6 +18,8 @@ function catchFish() {
     const max = 3;
     const fished = Math.round(Math.random() * (max - min) + min);
     variable.FishInInventory += fished;
+
+    stats.totalFished += fished;
 
     if (fished > 0) {
         if (fished < 2) {

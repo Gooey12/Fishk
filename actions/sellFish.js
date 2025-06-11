@@ -1,4 +1,5 @@
 import variable from '../vars.js';
+import stats from '../stats.js';
 
 function sellFish() {
     const soldDisplay = document.getElementById("soldDisplay");
@@ -6,6 +7,7 @@ function sellFish() {
     if (variable.FishInInventory > 0) {
         let earned = variable.FishInInventory * variable.FishPrice;
         variable.Money += earned;
+        stats.totalSold += variable.FishInInventory
 
         variable.XP += variable.FishInInventory / Math.round(Math.random() * (3 - 2) + 2);
         console.log(`XP: ${variable.XP}`);
